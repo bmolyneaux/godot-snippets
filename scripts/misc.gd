@@ -16,6 +16,7 @@ var _sprite : Sprite
 
 func _ready():
 	print("node is ", node.name)
+	call_deferred("_deferred_function", "foo")
 
 func _physics_process(delta):
 	pass
@@ -25,6 +26,9 @@ func _change_scene():
 
 func _type_hint(param : bool) -> bool:
 	return param
+
+func _deferred_function(param):
+	print("Deferred function: ", param)
 
 static func static_function():
 	print("Hello from static function")
