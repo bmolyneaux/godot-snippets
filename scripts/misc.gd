@@ -18,10 +18,6 @@ onready var node: Node = get_node(node_path)
 
 var _sprite : Sprite
 
-func _init():
-	# TODO: Move to groups script
-	add_to_group("my_group")
-
 func _ready():
 	# Reverse call order of _ready()
 	yield(owner, "ready")
