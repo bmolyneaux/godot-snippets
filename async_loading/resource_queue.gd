@@ -48,7 +48,7 @@ func queue_resource(path, p_in_front = false):
 	_lock("queue_resource")
 	if path in pending:
 		if is_ready(path):
-			call_deferred("emit_signal", path)
+			emit_signal(path)
 		_unlock("queue_resource")
 		return
 	elif ResourceLoader.has(path):
