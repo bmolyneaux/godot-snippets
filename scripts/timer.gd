@@ -1,7 +1,9 @@
 extends Node
 
+
 func _ready():
 	_setup_timer()
+
 
 # Create timer and connect signal
 func _setup_timer():
@@ -11,5 +13,11 @@ func _setup_timer():
 	timer.one_shot = true
 	timer.start(1.0)
 
+
 func _on_timeout():
 	print("Timer finished")
+
+
+func _delay():
+	# One-liner for delaying 1 second
+	yield(get_tree().create_timer(1), "timeout")
